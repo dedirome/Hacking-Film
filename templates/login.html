@@ -1,15 +1,59 @@
-{% extends "base.html" %}
+{% extends "/template.html" %}
 
-{% block topbar %}
+{% block styles %}{% endblock %}
 
+{% block body %}
 
-  <div id="fb-root"></div>
-  <h1>Welcome</h1>
-  <div id="login-flow">
-    <fb:login-button perms="email,offline_access" show-faces="true"></fb:login-button>
-  </div>
+<div class="jumbotron">
+        <div class="span3 offset1"><img src="http://placehold.it/140x140" class="img-circle"></div>
+    </div>
+
+    <!-- Log in / Email + Zipcode -->
+    <div class="row-fluid"> 
+      <div class="hero-unit">
+        <h2>Plan your movie hangout</h2>
+        <br><br>
+        <form class="form-search">
+          <label><h3>Enter your email: </h3></label>
+          <input type="text" class="input-medium search-query">
+          <button type="submit" class="btn btn-large btn-warning">Submit</button>
+        </form>
+          <label>or Login with Facebook: </label>
+            <div id="fb-root"></div>
+            <div id="login-flow">
+              <fb:login-button perms="email,offline_access" show-faces="true"></fb:login-button>
+            </div>
+      </div>
+    </div>
+
+      <!-- How does it works -->
+      <div class="row-fluid how-works">
+        <div class="container">
+          <div class="span3">
+            <h2>Invite your friends</h2>
+            <img src="http://placehold.it/140x140" class="img-circle">
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          </div>
+          <div class="span3">
+            <h2>Pick a movie</h2>
+            <img src="http://placehold.it/140x140" class="img-circle">
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+         </div>
+          <div class="span3">
+            <h2>We suggest places</h2>
+            <img src="http://placehold.it/140x140" class="img-circle">
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          </div>
+          <div class="span3">
+            <h2>Enjoy the hangout!</h2>
+            <img src="http://placehold.it/140x140" class="img-circle">
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          </div>
+        </div>
+      </div>
+
 
 {% endblock %}
 
-{% block content %}
-{% endblock %}
+
+{% block scripts %}{% endblock %}
