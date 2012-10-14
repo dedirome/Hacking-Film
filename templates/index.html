@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <!-- STEP 2 - SELECT MOVIE -->
+    <!-- STEP 1 - SELECT MOVIE -->
     <div class="row-fluid"> 
       <div class="hero-unit movie-pick">
         <h2>Step 2: Select the Movie</h2>
@@ -80,36 +80,10 @@
       </div>
     </div>
 
-      <!-- STEP 3 - SELECT PLACE -->
-      <div class="row-fluid select-hangout">
-        <div class="container">
-            <h2>Step 3: Select the Hangout</h2>
-            <br><br>
-
-            <form class="radiobutton span6">
-              <label><h3>Hangout:</h3>
-                <label class="radio inline">
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                  Before the movie
-                </label>
-                <label class="radio inline">
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                  After the movie
-                </label>
-                <button type="submit" class="btn btn-large btn-warning" href="/submit.html">Submit</button>
-              </label> 
-            </form>
-
-            <h3>These are our handpicked suggestions for you to hangout with your friends:</h3>
-        </div>
-      </div>
-
-
-
-      <!-- STEP 4 - INVITE YOUR FRIENDS -->
+      <!-- STEP 2 - INVITE YOUR FRIENDS -->
       <div class="row-fluid invite-friends">
         <div class="container">
-            <h2>Step 4: Invite your friends</h2>
+            <h2>Step 2: Invite your friends</h2>
             <br><br>
               
               <form class="form-horizontal">
@@ -147,6 +121,7 @@
                   </div>
                 </div>
               </form>
+              </form>  
                 
               <h3>Or select from your Facebook friends</h3>
               <ul class="friends">{% for friend in friends.data %}
@@ -156,6 +131,53 @@
                    {{friend.name}}
                   </a>
               </li>{% endfor %}</ul>
+
+        </div>
+      </div>
+
+      <!-- STEP 3 - SELECT PLACE -->
+      <div class="row-fluid select-hangout">
+        <div class="container">
+            <h2>Step 3: Select the Hangout</h2>
+            <br><br>
+
+            <form class="radiobutton span6">
+              <label><h3>Hangout:</h3>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                  Before the movie
+                </label>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                  After the movie
+                </label>
+                <button type="submit" class="btn btn-large btn-warning" href="/submit.html">Submit</button>
+              </label> 
+            </form>
+
+            <h3>These are our handpicked suggestions for you to hangout with your friends:</h3>
+        </div>
+      </div>
+
+
+      <!-- STEP 4 - CONFIRMATION -->
+      <div class="row-fluid invite-friends">
+        <div class="container">
+            <h2>Step 4: Confirm Your Grouvie Plan!</h2>
+            <br><br>
+              
+              <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label" for="inputEmail">Email</label>
+                </div>
+
+                <!-- Submit button -->
+                <div class="control-group">
+                  <div class="controls">
+                    <button type="submit" class="btn">Let's Go!</button>
+                  </div>
+                </div>
+              </form>
 
         </div>
       </div>
