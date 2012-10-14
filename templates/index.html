@@ -1,90 +1,167 @@
-{% extends "base.html" %}
+{% extends "/template.html" %}
 
-{% block topbar %}
+{% block styles %}{% endblock %}
 
-  <!-- By passing a valid access token here, we are able to display -->
-  <!-- the user's images without having to download or prepare -->
-  <!-- them ahead of time -->
-  <p id="picture" style="background-image: url(https://graph.facebook.com/me/picture?type=normal&access_token={{token}})"></p>
+{% block body %}
 
-  <div>
-    <h1>Welcome, <strong>{{me.name}}</strong></h1>
-    <p class="tagline">
-      This is your app
-      <a href="{{app.link}}">{{app.name}}</a>
-    </p>
-    <div id="share-app">
-      <p>Share your app:</p>
-      <ul>
-        <li>
-          <a href="#" class="facebook-button" id="postToWall" data-url="{{ url }}">
-            <span class="plus">Post to Wall</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="facebook-button speech-bubble" id="sendToFriends" data-url="{{ url }}">
-            <span class="speech-bubble">Send Message</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
-            <span class="apprequests">Send Requests</span>
-          </a>
-        </li>
-      </ul>
+    <!-- STEP 2 - SELECT MOVIE -->
+    <div class="row-fluid"> 
+      <div class="hero-unit movie-pick">
+        <h2>Step 2: Select the Movie</h2>
+
+        <!-- By passing a valid access token here, we are able to display -->
+        <!-- the user's images without having to download or prepare -->
+        <!-- them ahead of time -->
+        <p id="picture" style="background-image: url(https://graph.facebook.com/me/picture?type=normal&access_token={{token}})"></p>
+        <h3>Welcome, <strong>{{me.name}}</strong></h3>
+
+        <br><br>
+            
+            <form class="form-search span6">
+              <label><h3>Enter the zipcode you're going to: </h3></label>
+              <input type="text" class="input-medium search-query">
+              <button type="submit" class="btn btn-large btn-warning" href="/submit.html">Submit</button>
+            </form> 
+
+            <form class="dropdown span6">
+              <label><h3>Select the movie:</h3></label>
+              <select>
+                  <option>Argo</option>
+                  <option>Here Comes the Boom</option>
+                  <option>Sinister</option>
+                  <option>Seven Psychopaths</option>
+                  <option>Finding Nemo 3D</option>
+              </select>
+                  <button type="submit" class="btn btn-large btn-warning" href="/submit.html">Submit</button>    
+            </form> 
+
+
+            <form class="dropdown span6">
+              <label><h3>Pick the theater:</h3></label>
+              <select>
+                  <option>AMC Empire 25</option>
+                  <option>City Cinemas Paris Theatre</option>
+                  <option>Regal E-Walk Stadium 13 RPX</option>
+                  <option>AMC Loews Lincoln Square 13</option>
+                  <option>Angelika Film Center</option>
+              </select>
+                  <button type="submit" class="btn btn-large btn-warning" href="/submit.html">Submit</button>    
+            </form> 
+
+            <form class="radiobutton span6">
+              <label><h3>Select the time:</h3>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                  2:20pm
+                </label>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                  5:20pm
+                </label>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                  6:10pm
+                </label>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+                  8:00pm
+                </label>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios5" value="option5">
+                  9:30pm
+                </label>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios6" value="option6">
+                  11:50pm
+                </label>
+              </label>
+              <button type="submit" class="btn btn-large btn-warning" href="/submit.html">Submit</button> 
+            </form>
+      </div>
     </div>
-  </div>
+
+      <!-- STEP 3 - SELECT PLACE -->
+      <div class="row-fluid select-hangout">
+        <div class="container">
+            <h2>Step 3: Select the Hangout</h2>
+            <br><br>
+
+            <form class="radiobutton span6">
+              <label><h3>Hangout:</h3>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                  Before the movie
+                </label>
+                <label class="radio inline">
+                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                  After the movie
+                </label>
+                <button type="submit" class="btn btn-large btn-warning" href="/submit.html">Submit</button>
+              </label> 
+            </form>
+
+            <h3>These are our handpicked suggestions for you to hangout with your friends:</h3>
+        </div>
+      </div>
+
+
+
+      <!-- STEP 4 - INVITE YOUR FRIENDS -->
+      <div class="row-fluid invite-friends">
+        <div class="container">
+            <h2>Step 4: Invite your friends</h2>
+            <br><br>
+              
+              <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label" for="inputName">Name</label>
+                  <div class="controls">
+                    <input type="text" id="inputName">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="inputEmail">Email</label>
+                  <div class="controls">
+                    <input type="text" id="inputEmail">
+                  </div>
+                </div>
+
+                <br><br>
+                <div class="control-group">
+                  <label class="control-label" for="inputName">Name</label>
+                  <div class="controls">
+                    <input type="text" id="inputName">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="inputEmail">Email</label>
+                  <div class="controls">
+                    <input type="text" id="inputEmail">
+                  </div>
+                </div>
+
+                <!-- Submit button -->
+                <div class="control-group">
+                  <div class="controls">
+                    <button type="submit" class="btn">Submit</button>
+                  </div>
+                </div>
+              </form>
+                
+              <h3>Or select from your Facebook friends</h3>
+              <ul class="friends">{% for friend in friends.data %}
+              <li>
+                <a href="#" onclick="window.open('http://www.facebook.com/{{friend.id}}')">
+                  <img src="https://graph.facebook.com/{{friend.id}}/picture" alt="{{friend.name}}">
+                   {{friend.name}}
+                  </a>
+              </li>{% endfor %}</ul>
+
+        </div>
+      </div>
+
 
 {% endblock %}
 
-{% block content %}
-<section class="clearfix" id="samples">
-      <h1>Examples of the Facebook Graph API</h1>
-      <div class="list">
-        <h3>A few of your friends</h3>
-        <ul class="friends">{% for friend in friends.data %}
-        <li>
-          <a href="#" onclick="window.open('http://www.facebook.com/{{friend.id}}')">
-            <img src="https://graph.facebook.com/{{friend.id}}/picture" alt="{{friend.name}}">
-            {{friend.name}}
-          </a>
-        </li>{% endfor %}</ul>
-      </div>
-      <div class="list inline">
-        <h3>Recent photos</h3>
-        <ul class="photos">
-          {% for photo in photos.data %}
-            {% if loop.index0%4 == 0 %}
-          <li class="first-column" style="background-image: url({{photo.picture}})">
-            {% else %}
-          <li style="background-image: url({{photo.picture}})">
-            {% endif %}
-            <a href="#" onclick="window.open('http://www.facebook.com/{{photo.id}}')">
-              {{photo.name}}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="list">
-        <h3>Things you like</h3>
-        <ul class="things">{% for like in likes.data %}
-        <li>
-          <a href="#" onclick="window.open('http://www.facebook.com/{{like.id}}')">
-            <img src="https://graph.facebook.com/{{like.id}}/picture?type=square" alt="{{like.name}}">
-            {{like.name}}
-          </a>
-        </li>{% endfor %}</ul>
-      </div>
-      <div class="list">
-        <h3>Friends using this app</h3>
-        <ul class="friends">{% for friend in app_friends %}
-        <li>
-          <a href="#" onclick="window.open('http://www.facebook.com/{{friend.uid}}')">
-            <img src="https://graph.facebook.com/{{friend.uid}}/picture?type=square" alt="{{friend.name}}">
-            {{friend.name}}
-            </a>
-        </li>{% endfor %}</ul>
-      </div>
-    </section>
-{% endblock%}
+
+{% block scripts %}{% endblock %}
