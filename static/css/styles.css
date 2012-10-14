@@ -1,6 +1,7 @@
 /* Body */
 body {
-	background: #D1D6CE url(../img/bg.jpg) repeat center top;
+	background: url(../img/crisp.png) repeat center center;
+
 }
 
 
@@ -10,13 +11,10 @@ body {
 .jumbotron {
 	padding: 40px 0px 180px 0px;
 	color: black;
-	text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);	
+	-webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
+	-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+	box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);	
 }
-
-.img-circle {
-	box-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
-}
-
 
 
 
@@ -24,17 +22,19 @@ body {
 
 .hero-unit {
 	margin-bottom: 0px;
-	background: #dfe6da;
-	background: -moz-linear-gradient(45deg, #dfe6da 0%, #f0f7ea 100%);
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#dfe6da), color-stop(100%,#f0f7ea));
-	background: -webkit-linear-gradient(45deg, #dfe6da 0%,#f0f7ea 100%);
-	background: -o-linear-gradient(45deg, #dfe6da 0%,#f0f7ea 100%);
-	background: -ms-linear-gradient(45deg, #dfe6da 0%,#f0f7ea 100%);
-	background: linear-gradient(45deg, #dfe6da 0%,#f0f7ea 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfe6da', endColorstr='#f0f7ea',GradientType=1 );
+	background: #ff8a00;
+	background: -moz-linear-gradient(45deg, #ff8a00 0%, #ea7f00 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#ff8a00), color-stop(100%,#ea7f00));
+	background: -webkit-linear-gradient(45deg, #ff8a00 0%,#ea7f00 100%);
+	background: -o-linear-gradient(45deg, #ff8a00 0%,#ea7f00 100%);
+	background: -ms-linear-gradient(45deg, #ff8a00 0%,#ea7f00 100%);
+	background: linear-gradient(45deg, #ff8a00 0%,#ea7f00 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8a00', endColorstr='#ea7f00',GradientType=1 );
 	b-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
+	color: white;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);	
 }
 
 .hero-unit h2 {
@@ -43,7 +43,7 @@ body {
 
 
 .input-medium { 
-	width: 200px;
+	width: 220px;
 }
 
 .zipcode { 
@@ -108,7 +108,7 @@ body {
 }
 
 .movie-pick {
-	text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+	box-shadow: none;
 }
 
 
